@@ -1,0 +1,29 @@
+<main></main>
+<script src="https://cdn.jsdelivr.net/gh/netizenorg/netnet-standard-library@1.0.1/build/nn.min.js"></script>
+<script>
+
+  //this is the function that makes emojis
+  function emoji () {
+
+    //let x = nn.random(nn.width)
+    //let y = nn.random(nn.height)
+    
+    let x = nn.mouseX
+    let y = nn.mouseY
+    
+    nn.create("h5")
+      .content("🤣")
+      .addTo("main")
+      .positionOrigin("center")
+      .position(x, y)
+      .css("user-select", "none")
+    
+  }
+
+  nn.on("mousemove", function(){
+    if (!nn.mouseDown) return
+    emoji ()
+  })
+
+
+</script>
